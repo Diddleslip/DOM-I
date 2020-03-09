@@ -42,7 +42,6 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 logo.src = siteContent["nav"]["img-src"];
 
-
 // assigning NAV
 document.querySelector("nav :nth-child(1)").textContent = siteContent["nav"]["nav-item-1"];
 document.querySelector("nav :nth-child(2)").textContent = siteContent["nav"]["nav-item-2"];
@@ -51,9 +50,24 @@ document.querySelector("nav :nth-child(4)").textContent = siteContent["nav"]["na
 document.querySelector("nav :nth-child(5)").textContent = siteContent["nav"]["nav-item-5"];
 document.querySelector("nav :nth-child(6)").textContent = siteContent["nav"]["nav-item-6"];
 
-// assigning test to change all color of NAV
-// let newColor = document.querySelectorAll("nav a");
-// newColor.forEach( color => color.style.color = "yellow");
+// assigning change to color text of NAV
+let newColor = document.querySelectorAll("nav a");
+newColor.forEach( color => color.style.color = "green");
+
+// assigning two new items at start and end of NAV
+let firstItem = document.createElement("a")
+firstItem.textContent = "Hey!";
+document.querySelector("nav").prepend(firstItem);
+firstItem.style.color = "white";
+
+// assigning background color to NAV bar
+document.querySelector("nav").style.background = "lightgray";
+document.querySelector("nav").style.padding = "1vw";
+
+let lastItem = document.createElement("a");
+lastItem.textContent = "Bye!";
+document.querySelector("nav").appendChild(lastItem);
+lastItem.style.color = "black";
 
 // assigning header titles, and pictures.
 document.querySelector(".cta-text h1").textContent = siteContent["cta"]["h1"];
